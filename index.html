@@ -4,27 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Amirreza Asadi | Computational Biomechanics</title>
+  <title>Amirreza Asadi | Computational Biomechanics & Physics-Informed AI</title>
   <meta name="description" content="Amirreza Asadi is a PhD candidate at UC Riverside working on computational biomechanics, hyperelasticity, inverse problems, medical imaging, and physics-informed AI." />
   <meta name="author" content="Amirreza Asadi" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://aasad009.github.io/" />
+  <link rel="canonical" href="https://amirreza-asadi.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Amirreza Asadi | Computational Biomechanics" />
   <meta property="og:description" content="Research in nonlinear tissue mechanics, inverse problems, optimal experimental design, and physics-informed AI." />
-  <meta property="og:url" content="https://aasad009.github.io/" />
-  <meta property="og:image" content="https://aasad009.github.io/profile.png" />
+  <meta property="og:url" content="https://amirreza-asadi.com/" />
+  <meta property="og:site_name" content="Amirreza Asadi" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amirreza Asadi | Computational Biomechanics" />
+  <meta name="twitter:description" content="Research in nonlinear tissue mechanics, inverse problems, optimal experimental design, medical imaging, and physics-informed AI." />
+  <meta name="twitter:image" content="https://amirreza-asadi.com/profile.png" />
+  <meta property="og:image" content="https://amirreza-asadi.com/profile.png" />
   <meta property="og:image:alt" content="Professional portrait of Amirreza Asadi" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://amirreza-asadi.com/",
+  "name": "Amirreza Asadi | Computational Biomechanics",
+  "mainEntity": {
     "@type": "Person",
     "name": "Amirreza Asadi",
-    "url": "https://aasad009.github.io/",
-    "jobTitle": "PhD Candidate",
+    "url": "https://amirreza-asadi.com/",
+    "image": "https://amirreza-asadi.com/profile.png",
+    "jobTitle": "PhD Candidate in Mechanical Engineering",
     "affiliation": {
       "@type": "CollegeOrUniversity",
       "name": "University of California, Riverside"
@@ -41,9 +52,25 @@
       "Inverse Problems",
       "Physics-Informed Machine Learning",
       "Medical Imaging",
-      "Elastography"
+      "Elastography",
+      "Optimal Experimental Design"
+    ],
+    "award": [
+      "Outstanding Poster Presentation Award, Annual Research Symposium, University of California, Riverside, 2026"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Outstanding Poster Presentation Award",
+        "description": "Awarded for a poster on MRI-based voxel-wise nonlinear mechanical characterization of soft tissue using information-aware loading design and physics-informed neural networks.",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Materials Science & Mechanical Engineering Graduate Student Association, University of California, Riverside"
+        }
+      }
     ]
   }
+}
   </script>
 
   <style>
@@ -569,6 +596,116 @@
       font-weight: 800;
     }
 
+
+    .award-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(28px, 4vw, 50px);
+      align-items: center;
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(102, 179, 255, 0.12), transparent 42%),
+        linear-gradient(145deg, rgba(102, 179, 255, 0.075), rgba(126, 224, 210, 0.035));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .award-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -110px;
+      bottom: -145px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(126, 224, 210, 0.10), transparent 68%);
+      pointer-events: none;
+    }
+
+    .award-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.24);
+    }
+
+    .award-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 240ms ease;
+    }
+
+    .award-card:hover .award-image img {
+      transform: scale(1.022);
+    }
+
+    .award-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(126, 224, 210, 0.22);
+      border-radius: 999px;
+      background: rgba(126, 224, 210, 0.07);
+      color: #c8fff7;
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .award-badge::before {
+      content: "★";
+      color: var(--accent-2);
+      font-size: 0.88rem;
+    }
+
+    .award-content h3 {
+      margin: 0 0 14px;
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .award-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .award-organization {
+      margin-top: 22px !important;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #d5e8ff !important;
+      font-size: 0.94rem;
+    }
+
+    .award-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .award-links .button {
+      min-height: 44px;
+      padding: 0 16px;
+      font-size: 0.92rem;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -676,6 +813,10 @@
       .publication {
         grid-template-columns: 1fr;
       }
+
+      .award-card {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
@@ -714,6 +855,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#news">News</a>
+        <a href="#honors">Honors</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -839,7 +981,7 @@
         <div class="hero-copy">
           <div class="eyebrow">
             <span class="dot"></span>
-            PhD Candidate · University of California, Riverside
+            Amirreza Asadi · PhD Candidate · University of California, Riverside
           </div>
 
           <h1>
@@ -1048,6 +1190,14 @@
 
         <div class="news-list">
           <div class="news-item">
+            <div class="news-date">2026</div>
+            <div>
+              Received the <strong>Outstanding Poster Presentation Award</strong>
+              at the Annual Research Symposium organized by the Materials Science
+              &amp; Mechanical Engineering Graduate Student Association at UC Riverside.
+            </div>
+          </div>
+          <div class="news-item">
             <div class="news-date">Jul 2026</div>
             <div>PI-UNet paper accepted in <em>Annals of Biomedical Engineering</em>.</div>
           </div>
@@ -1056,6 +1206,59 @@
             <div>Published work on optimal hyperelastic characterization and experimental design in JMBBM.</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="honors">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Honors &amp; recognition</h2>
+          <p>
+            Recognition for communicating research in computational biomechanics,
+            nonlinear tissue characterization, and physics-informed learning.
+          </p>
+        </div>
+
+        <article class="award-card">
+          <div class="award-image">
+            <img
+              src="award-poster-2026.jpg"
+              alt="Amirreza Asadi holding the Outstanding Poster Presentation Award at UC Riverside"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="award-content">
+            <div class="award-badge">Outstanding Poster Presentation Award · 2026</div>
+
+            <h3>Annual Research Symposium at UC Riverside</h3>
+
+            <p>
+              Recognized for presenting research on MRI-based voxel-wise nonlinear
+              mechanical characterization of soft tissue using information-aware
+              loading design and physics-informed neural networks.
+            </p>
+
+            <p class="award-organization">
+              Materials Science &amp; Mechanical Engineering Graduate Student Association
+              · University of California, Riverside
+            </p>
+
+            <div class="award-links">
+              <a
+                class="button secondary"
+                href="https://www.linkedin.com/in/amirreza-asadi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View LinkedIn profile
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
