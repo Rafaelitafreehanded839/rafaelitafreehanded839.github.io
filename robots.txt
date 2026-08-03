@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aasad009.github.io/sitemap.xml
