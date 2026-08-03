@@ -1,24 +1,707 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirreza Asadi</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Amirreza Asadi | Computational Biomechanics</title>
+  <meta name="description" content="Amirreza Asadi is a PhD candidate at UC Riverside working on computational biomechanics, hyperelasticity, inverse problems, medical imaging, and physics-informed AI." />
+  <meta name="author" content="Amirreza Asadi" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://aasad009.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Amirreza Asadi | Computational Biomechanics" />
+  <meta property="og:description" content="Research in nonlinear tissue mechanics, inverse problems, optimal experimental design, and physics-informed AI." />
+  <meta property="og:url" content="https://aasad009.github.io/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amirreza Asadi",
+    "url": "https://aasad009.github.io/",
+    "jobTitle": "PhD Candidate",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Riverside"
+    },
+    "sameAs": [
+      "https://orcid.org/0009-0004-6941-8808",
+      "https://github.com/aasad009"
+    ],
+    "knowsAbout": [
+      "Computational Biomechanics",
+      "Hyperelasticity",
+      "Inverse Problems",
+      "Physics-Informed Machine Learning",
+      "Medical Imaging",
+      "Elastography"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --panel: rgba(255, 255, 255, 0.065);
+      --panel-strong: rgba(255, 255, 255, 0.10);
+      --text: #f4f8ff;
+      --muted: #aebcd1;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #66b3ff;
+      --accent-2: #7ee0d2;
+      --max: 1160px;
+      --radius: 22px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.20), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(45, 212, 191, 0.12), transparent 28%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #field {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.58;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      padding: 120px 0 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cfe5ff;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 18px var(--accent-2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #8cc7ff 55%, #7ee0d2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: 180ms ease;
+    }
+
+    .button.primary {
+      color: #07111f;
+      background: linear-gradient(135deg, #9ad0ff, #7ee0d2);
+      border-color: transparent;
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    section {
+      padding: 96px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 44px;
+      align-items: start;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      font-size: 0.82rem;
+      color: var(--accent-2);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 14px 0 10px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #b9dcff;
+      font-weight: 700;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .pub-year {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--accent-2);
+    }
+
+    .publication h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #d7eaff;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .news-date {
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .fact {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .fact span { color: var(--muted); }
+
+    footer {
+      padding: 42px 0 56px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .section-heading,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid { grid-template-columns: 1fr; }
+      .publication {
+        grid-template-columns: 1fr;
+      }
+      .hero { min-height: 680px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+      #field { display: none; }
+    }
+  </style>
 </head>
-<body style="font-family:Arial;text-align:center;margin-top:120px">
 
-<h1>Amirreza Asadi</h1>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Amirreza Asadi</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#news">News</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<h2>PhD Candidate</h2>
+  <main id="top">
+    <header class="hero">
+      <canvas id="field"></canvas>
 
-<p>
-Department of Mechanical Engineering
-<br>
-University of California, Riverside
-</p>
+      <div class="container hero-content">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          PhD Candidate · University of California, Riverside
+        </div>
 
-<p>
-Computational Biomechanics • Hyperelasticity • Inverse Problems • Physics-Informed AI
-</p>
+        <h1>
+          <span class="gradient-text">Computational biomechanics</span><br />
+          for nonlinear tissue characterization.
+        </h1>
 
+        <p class="hero-subtitle">
+          I develop mechanics-informed computational methods for recovering
+          spatially resolved soft-tissue properties from deformation and medical-imaging data.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#research">Explore my research</a>
+          <a class="button secondary" href="#publications">View publications</a>
+          <a class="button secondary" href="cv.pdf">Download CV</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Hyperelasticity</span>
+          <span>Inverse problems</span>
+          <span>Physics-informed AI</span>
+          <span>Medical imaging</span>
+          <span>Elastography</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Research themes</h2>
+          <p>
+            My work focuses on a central question: how can deformation measurements
+            be converted into reliable, physically interpretable maps of nonlinear tissue mechanics?
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-number">01 · Identifiability</div>
+            <h3>Optimal experimental design</h3>
+            <p>
+              Quantifying the information content of loading conditions and selecting
+              deformations that improve multiparameter hyperelastic identifiability.
+            </p>
+            <a class="card-link" href="#publications">Related publication →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02 · Inverse imaging</div>
+            <h3>Physics-informed hyperelastic reconstruction</h3>
+            <p>
+              Recovering voxel-wise nonlinear material parameters from volumetric
+              deformation fields while enforcing equilibrium and boundary reactions.
+            </p>
+            <a class="card-link" href="https://doi.org/10.1007/s10439-026-04321-4">PI-UNet paper →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 · Ongoing</div>
+            <h3>Constitutive compatibility atlases</h3>
+            <p>
+              Building noise-aware maps of where different constitutive models are
+              distinguishable, compatible, or observationally equivalent.
+            </p>
+            <a class="card-link" href="#contact">Research in progress →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Selected publications</h2>
+          <p>
+            A developing research program linking information-aware experiment design
+            with mechanics-constrained nonlinear inverse characterization.
+          </p>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication">
+            <div class="pub-year">2026</div>
+            <div>
+              <h3>Stress-Constrained Physics-Informed UNet for Voxel-Wise Multiparameter Hyperelastic Inversion in Volumetric Medical Imaging</h3>
+              <p>Amirreza Asadi and Kaveh Laksari · Annals of Biomedical Engineering</p>
+            </div>
+            <a class="pill" href="https://doi.org/10.1007/s10439-026-04321-4">DOI</a>
+          </article>
+
+          <article class="publication">
+            <div class="pub-year">2025</div>
+            <div>
+              <h3>Optimal hyperelastic characterization through information-aware experimental design</h3>
+              <p>Amirreza Asadi and Kaveh Laksari · Journal of the Mechanical Behavior of Biomedical Materials</p>
+            </div>
+            <a class="pill" href="#">Add DOI</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container">
+        <div class="section-heading">
+          <h2>News</h2>
+          <p>Recent research and professional milestones.</p>
+        </div>
+
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-date">Jul 2026</div>
+            <div>PI-UNet paper accepted in <em>Annals of Biomedical Engineering</em>.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">2025</div>
+            <div>Published work on optimal hyperelastic characterization and experimental design in JMBBM.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>
+            I am a PhD candidate in Mechanical Engineering at UC Riverside,
+            working at the intersection of computational mechanics, medical imaging,
+            inverse problems, and machine learning.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Research direction</h3>
+            <p>
+              My long-term goal is to develop quantitative, mechanics-based imaging methods
+              that move beyond simplified stiffness estimates and recover spatially resolved
+              nonlinear constitutive information.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="fact-list">
+              <div class="fact">
+                <strong>Institution</strong>
+                <span>University of California, Riverside</span>
+              </div>
+              <div class="fact">
+                <strong>Department</strong>
+                <span>Mechanical Engineering</span>
+              </div>
+              <div class="fact">
+                <strong>Advisor</strong>
+                <span>Prof. Kaveh Laksari</span>
+              </div>
+              <div class="fact">
+                <strong>ORCID</strong>
+                <span>0009-0004-6941-8808</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>
+            For research discussions, collaborations, or internship opportunities,
+            reach me through email or the profiles below.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:aasad009@ucr.edu">Email</a>
+          <a class="button secondary" href="https://github.com/aasad009">GitHub</a>
+          <a class="button secondary" href="https://orcid.org/0009-0004-6941-8808">ORCID</a>
+          <a class="button secondary" href="#">Add LinkedIn</a>
+          <a class="button secondary" href="#">Add Google Scholar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Amirreza Asadi</span>
+      <span>Built with HTML, CSS, JavaScript, and GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const canvas = document.getElementById("field");
+    const ctx = canvas.getContext("2d");
+
+    let width = 0;
+    let height = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let mouse = { x: -9999, y: -9999 };
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+    });
+
+    const spacing = 44;
+
+    function draw(time) {
+      ctx.clearRect(0, 0, width, height);
+      ctx.lineWidth = 0.8;
+
+      for (let y = -spacing; y < height + spacing; y += spacing) {
+        ctx.beginPath();
+
+        for (let x = -spacing; x < width + spacing; x += 8) {
+          const dx = x - mouse.x;
+          const dy = y - mouse.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const influence = Math.max(0, 1 - distance / 260);
+          const wave = Math.sin(x * 0.018 + time * 0.00055 + y * 0.012) * 5;
+          const offsetY = wave + influence * 28 * Math.sin(distance * 0.035 - time * 0.002);
+
+          if (x === -spacing) ctx.moveTo(x, y + offsetY);
+          else ctx.lineTo(x, y + offsetY);
+        }
+
+        ctx.strokeStyle = "rgba(126, 224, 210, 0.13)";
+        ctx.stroke();
+      }
+
+      for (let x = -spacing; x < width + spacing; x += spacing) {
+        ctx.beginPath();
+
+        for (let y = -spacing; y < height + spacing; y += 8) {
+          const dx = x - mouse.x;
+          const dy = y - mouse.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const influence = Math.max(0, 1 - distance / 260);
+          const wave = Math.cos(y * 0.016 + time * 0.00045 + x * 0.01) * 4;
+          const offsetX = wave + influence * 24 * Math.cos(distance * 0.03 - time * 0.0018);
+
+          if (y === -spacing) ctx.moveTo(x + offsetX, y);
+          else ctx.lineTo(x + offsetX, y);
+        }
+
+        ctx.strokeStyle = "rgba(102, 179, 255, 0.11)";
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    requestAnimationFrame(draw);
+  </script>
 </body>
 </html>
